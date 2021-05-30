@@ -11,6 +11,7 @@ server.use('/api', ResourceRouter)
 server.use('/api', TaskRouter)
 
 
+// my error handler
 server.use((err, req, res, next) => { // eslint-disable-line
   res.status(500).json({
     message: err.message,

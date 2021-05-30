@@ -5,7 +5,7 @@ const Resources = require('./model');
 const resRouter = express.Router();
 
 resRouter.get('/resources', (req, res, next) => {
-  Resources.get()
+  Resources.getResources()
     .then(resources => {
       if(resources){
         res.status(200).json(resources)
@@ -16,5 +16,12 @@ resRouter.get('/resources', (req, res, next) => {
     .catch(next)
 })
 
+resRouter.post('/resources', (req, res, next) => {
+  Resources.addResource(req.body)
+    .then(resource => {
+      res.status(201).json(resource)
+    })
+    .catch(next)
+})
 
 module.exports = resRouter;

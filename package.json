@@ -4,6 +4,7 @@
   "description": "Data Persistence Challenge",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon index.js",
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "test": "cross-env NODE_ENV=testing jest --watch --verbose --runInBand --silent"

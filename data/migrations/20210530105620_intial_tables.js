@@ -4,7 +4,7 @@ exports.up = function(knex) {
     .createTable('projects', tbl => {
       tbl.increments('project_id');
       tbl.string('project_name', 150).notNullable().unique();
-      tbl.text('description');
+      tbl.text('project_description');
       tbl.boolean('completed');
     })
     .createTable('tasks', tbl => {
@@ -23,7 +23,7 @@ exports.up = function(knex) {
     .createTable('resources', tbl => {
       tbl.increments('resource_id');
       tbl.string('resource_name', 150).notNullable().unique();
-      tbl.text('description')
+      tbl.text('resource_description')
     })
     .createTable('resource_assignments', tbl => {
       tbl.increments('resource_assignment_id');
