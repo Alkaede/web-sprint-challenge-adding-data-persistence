@@ -8,7 +8,7 @@ tasRouter.get('/tasks', (req, res, next) => {
   Tasks.get()
     .then(tasks => {
       if(tasks){
-        res.status(200).json({message: 'tasks router'})
+        res.status(200).json(tasks)
       }else{
         res.status(400).json({message: 'Project request fail'})
       }

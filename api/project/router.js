@@ -8,7 +8,7 @@ router.get('/projects', (req, res, next) => {
   Projects.get()
     .then(projects => {
       if(projects){
-        res.status(200).json({message: 'projects router'})
+        res.status(200).json(projects)
       }else{
         res.status(400).json({message: 'Project request fail'})
       }

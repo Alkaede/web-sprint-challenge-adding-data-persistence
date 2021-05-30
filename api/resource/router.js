@@ -8,7 +8,7 @@ resRouter.get('/resources', (req, res, next) => {
   Resources.get()
     .then(resources => {
       if(resources){
-        res.status(200).json({message: 'resource router'})
+        res.status(200).json(resources)
       }else{
         res.status(400).json({message: 'Project request fail'})
       }
