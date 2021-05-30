@@ -16,13 +16,13 @@ tasRouter.get('/tasks', (req, res, next) => {
     .catch(next)
 })
 
-// tasRouter.post('/tasks', (req, res, next) => {
-//   Tasks.addProject(req.body)
-//     .then(task => {
-//       res.status(201).json(task)
-//     })
-//     .catch(next)
-// })
+tasRouter.post('/tasks', (req, res, next) => {
+  Tasks.addProject(req.body)
+    .then(task => {
+      res.status(201).json(task)
+    })
+    .catch(next)
+})
 
 
 module.exports = tasRouter;
