@@ -14,7 +14,7 @@ exports.up = function(knex) {
       tbl.boolean('task_completed');
       tbl.integer('project_id')
         .unsigned()
-        .references('id')
+        .references('project_id')
         .inTable('projects')
         .notNullable()
         .onDelete('RESTRICT')
