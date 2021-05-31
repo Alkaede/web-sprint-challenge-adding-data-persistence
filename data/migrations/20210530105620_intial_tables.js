@@ -5,13 +5,13 @@ exports.up = function(knex) {
       tbl.increments('project_id');
       tbl.string('project_name', 150).notNullable().unique();
       tbl.text('project_description');
-      tbl.int('project_completed');
+      tbl.integer('project_completed');
     })
     .createTable('tasks', tbl => {
       tbl.increments('task_id');
       tbl.string('task_description', 150).notNullable().unique();
       tbl.string('task_notes');
-      tbl.int('task_completed');
+      tbl.integer('task_completed');
       tbl.integer('project_id')
         .unsigned()
         .references('project_id')
